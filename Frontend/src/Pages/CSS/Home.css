@@ -1,0 +1,257 @@
+.bg-top {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.top-left {
+    width: 30%;
+    background: linear-gradient(135deg, #082b63 0%, #0B2D74 100%);
+    padding: 30px 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.top-left h1 {
+    font-size: 35px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.top-left p {
+    margin: 25px 0;
+    font-size: 17px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+.explore {
+    background: #FFC107;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #082b63;
+}
+
+.explore:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+}
+
+.callback {
+    background: none;
+    color: white;
+    border: 2px solid white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.callback:hover {
+    background: white;
+    color: #082b63;
+}
+
+.home-features {
+    width: 100%;
+    position: absolute;
+    top: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-top: 10px;
+    padding: 20px;
+    color: black;
+    gap: 20px;
+}
+
+.home-features > div {
+    background: rgba(255,255,255,0.95);
+    padding: 12px 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.home-features h4 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0B2D74;
+}
+
+.home-features small {
+    color: #555;
+    font-size: 12px;
+}
+
+.top-center {
+    width: 70%;
+    overflow: hidden;
+}
+
+.top-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Popular Courses Section */
+.popular-section {
+  width: 90%;
+  margin: 70px auto;
+}
+
+.popular-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.popular-header h2 {
+  color: #0B2D74;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.popular-header span {
+  letter-spacing: .5px;
+}
+
+.popular-header a {
+  text-decoration: none;
+  color: #2563EB;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.popular-header a:hover {
+  color: #FFC107;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 22px;
+}
+
+.course-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px 20px;
+  border: 1px solid #ececec;
+  transition: 0.35s;
+  text-align: center;
+}
+
+.course-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(11, 45, 116, 0.12);
+  border-color: #2563EB;
+}
+
+.course-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin: 0 auto 18px;
+}
+
+.course-card h3 {
+  color: #0B2D74;
+  font-size: 19px;
+  margin-bottom: 15px;
+}
+
+.course-card ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.course-card ul li {
+  margin: 10px 0;
+  color: #555;
+  font-size: 14px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.course-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #FFC107;
+  font-size: 20px;
+}
+
+.course-card button {
+  border: none;
+  background: transparent;
+  color: #2563EB;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.course-card button:hover {
+  color: #FFC107;
+}
+
+@media(max-width: 1400px) {
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 900px) {
+    .bg-top {
+        flex-direction: column;
+        height: auto;
+    }
+    .top-left {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    .top-center {
+        width: 100%;
+        height: 300px;
+    }
+    .home-features {
+        position: relative;
+        top: auto;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .popular-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media(max-width: 600px) {
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+}

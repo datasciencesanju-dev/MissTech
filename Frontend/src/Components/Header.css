@@ -1,0 +1,183 @@
+.header-outer {
+    height: 72px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 15px rgba(8, 43, 99, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 20px;
+    transition: box-shadow 0.3s;
+}
+
+.header-logo {
+    width: 10%;
+    min-width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.header-logo > img {
+    height: 90%;
+}
+
+.header-menu {
+    flex: 1;
+}
+
+.header-menu > ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.header-menu > ul > li {
+    padding: 8px 14px;
+}
+
+.menu-item {
+    text-decoration: none;
+    font-size: 15px;
+    color: #1a1a2e;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s;
+    letter-spacing: 0.2px;
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2.5px;
+    background: linear-gradient(90deg, #2563EB, #08b4ff);
+    border-radius: 2px;
+    transition: width 0.3s;
+}
+
+.menu-item:hover::after,
+.menu-item.active::after {
+    width: 100%;
+}
+
+.menu-item:hover {
+    color: #2563EB;
+}
+
+.active {
+    color: #2563EB;
+}
+
+.student_profile {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header-login-btn,
+.header-SignUp-btn {
+    padding: 7px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 2px solid #2563EB;
+    color: #2563EB;
+    background-color: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+}
+
+.header-login-btn:hover,
+.header-SignUp-btn:hover {
+    background: #2563EB;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.header-enquiry-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #2563EB, #0B2D74);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    letter-spacing: 0.3px;
+}
+
+.header-enquiry-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 18px rgba(11, 45, 116, 0.35);
+    background: linear-gradient(135deg, #0B2D74, #2563EB);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #0B2D74;
+    cursor: pointer;
+}
+
+@media(max-width: 1100px) {
+    .header-menu > ul > li {
+        padding: 8px 8px;
+    }
+    .menu-item {
+        font-size: 13px;
+    }
+}
+
+@media(max-width: 900px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    .header-menu {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: translateY(-120%);
+        transition: transform 0.4s;
+        z-index: 999;
+    }
+    .header-menu.open {
+        transform: translateY(0);
+    }
+    .header-menu > ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+    }
+    .header-menu > ul > li {
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+        width: 100%;
+        text-align: center;
+    }
+    .student_profile {
+        display: none;
+    }
+}
