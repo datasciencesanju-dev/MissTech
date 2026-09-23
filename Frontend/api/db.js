@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const Course = require('../Models/CourseModel')
-const { defaultCourses } = require('../Controllers/CourseController')
+const Course = require('./Models/CourseModel')
+const { defaultCourses } = require('./Controllers/CourseController')
 const dns = require('dns')
 
 // Set public DNS fallback to avoid ECONNREFUSED on SRV queries
